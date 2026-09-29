@@ -121,6 +121,20 @@ Slash commands are optional. Routing happens through tool calls, driven by this 
 
 Packages live under `skills/`. Each one is an [agentskills.io](https://agentskills.io) folder with `SKILL.md`. The core route is `create-prd` → `create-agent-tasks` → `implement-agent-task` → `review-agent-task`.
 
+## Catalog dashboard
+
+To see how the skills fit together, build the dashboard:
+
+```bash
+npm run dashboard
+```
+
+This writes `dashboard/index.html`. Open it in a browser. It needs no server and no network connection.
+
+The page shows a routing diagram with the router (`help`), the core lifecycle, supporting workflows, and the shared behavior skill (`grill-me`). Below it is a card for each skill with its description, the skills it loads and is loaded by, its extra files, and its full `SKILL.md`. Click a skill in the diagram to highlight its connections, or filter the cards by name or description.
+
+Everything is read from `skills/`, so rerun the command after adding or editing a skill. Links come from skill names written in backticks or as `get_skill("…")` in a skill's `SKILL.md` and reference files, and the lifecycle comes from the longest `a` → `b` chain written in the catalog. The `dashboard/` folder is gitignored.
+
 ## License
 
 [MIT](LICENSE). Copyright (c) 2026 Kris Lemieux and Red Brick Media.

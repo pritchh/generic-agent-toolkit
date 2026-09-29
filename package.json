@@ -15,6 +15,7 @@
     "start": "node bin/generic-agent-toolkit.mjs",
     "dev": "node bin/generic-agent-toolkit.mjs",
     "check:skills": "tsx scripts/check-skills.ts",
+    "dashboard": "tsx scripts/build-dashboard.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -27,5 +28,9 @@
     "@types/node": "^22.0.0",
     "typescript": "^5.8.3",
     "vitest": "^4.1.7"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
   }
 }
